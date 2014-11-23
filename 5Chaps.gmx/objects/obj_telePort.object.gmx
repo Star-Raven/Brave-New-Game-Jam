@@ -46,7 +46,7 @@
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>Tp</sound>
+            <sound>snd_tp</sound>
           </argument>
           <argument>
             <kind>3</kind>
