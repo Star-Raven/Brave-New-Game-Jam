@@ -47,7 +47,7 @@ obj_angle = point_towards_mouse
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>sound0</sound>
+            <sound>snd_tk</sound>
           </argument>
           <argument>
             <kind>3</kind>
