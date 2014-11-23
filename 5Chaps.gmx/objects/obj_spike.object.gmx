@@ -74,7 +74,7 @@ damaging = true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if damaging{
+            <string>if damaging = true{
     global.dying = true
     obj_player.sprite_index = spr_revive
     obj_player.image_index = 16
@@ -96,14 +96,16 @@ damaging = true
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>other</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if damaging{
-    instance_destroy()
+            <string>if damaging = true{
+    with (other){
+        instance_destroy()
+    }
 }
 </string>
           </argument>

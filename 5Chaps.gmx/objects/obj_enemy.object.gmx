@@ -26,9 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-dir = choose(1,2,3,4,5);
 alarm[0] = 30;
 canShoot = true;
+xDir = 0
+yDir = 0
 </string>
           </argument>
         </arguments>
@@ -111,20 +112,8 @@ alarm[2] = 60
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//right left up down
-if choose(1,2) = 1 {
-    if 720-x &gt;= 360 {
-        dir = choose(1,1,2,2,2,3,4,5,5);
-    } else {
-        dir = choose(1,1,1,2,2,3,4,5,5);
-    }
-} else {
-    if 480-y &gt;= 240 {
-        dir = choose(1,2,3,3,3,4,4,5,5);
-    } else {
-        dir = choose(1,2,3,3,4,4,4,5,5);
-    }
-}
+            <string>xDir = choose(5,-5,0)
+yDir = choose(3,-3,0)
 alarm[0] = 30
 </string>
           </argument>
@@ -162,12 +151,11 @@ if instance_exists(tk) {
         y = newY
     }
 } else {
-    player = instance_nearest(x,y,obj_player)
-    pXDir = clamp(player.x-x,-1,1)
-    pXDir = clamp(player.y-y,-1,1)
+    if !place_meeting(x+xDir,y+yDir,obj_door) and place_free(x+xDir,y+yDir) {
+        x+=xDir
+        y+=yDir
+    }
 }
-//+ = down and right, - = up and left
-
 
 depth = -y;
 if canShoot {

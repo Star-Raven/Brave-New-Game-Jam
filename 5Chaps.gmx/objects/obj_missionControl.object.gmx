@@ -62,7 +62,6 @@ global.mission = "Start"
 } else {
     if instance_number(obj_enemy) &lt;= 0 {
         global.roomDone = true
-        instance_destroy()
     }
 }
 </string>
