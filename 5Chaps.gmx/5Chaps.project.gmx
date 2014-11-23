@@ -54,9 +54,6 @@
     <background>background\back_menu</background>
   </backgrounds>
   <paths name="paths"/>
-  <objects name="objects">
-    <objects name="GameObjects"/>
-  </objects>
   <rooms name="rooms">
     <room>rooms\rm_death</room>
     <room>rooms\rm_menu</room>
