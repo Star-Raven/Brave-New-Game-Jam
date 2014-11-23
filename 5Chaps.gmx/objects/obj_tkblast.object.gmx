@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0.15
-image_angle = point_direction(x,y,mouse_x,mouse_y)+90
-direction = point_direction(x,y,mouse_x,mouse_y)
+image_angle = point_direction(x+12,y+8,mouse_x,mouse_y)-90
+direction = point_direction(x+12,y+8,mouse_x,mouse_y)
 speed = 5
 alarm[0] = 60
 </string>
