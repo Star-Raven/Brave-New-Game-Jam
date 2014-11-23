@@ -110,7 +110,8 @@ room_goto(rm_new);
 darkness = 0
 obj_player.x = 528
 obj_player.y = 380
-instance_create(0,0,obj_killEnemies)
+global.mission = obj_killEnemies
+event_perform_object(obj_player,ev_other,ev_user0)
 </string>
           </argument>
         </arguments>
