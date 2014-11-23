@@ -3,7 +3,7 @@
   <spriteName>spr_doorFront</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>0</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0
-darkness = 0
-obj_dark.image_alpha = darkness
-global.roomDone = true
+            <string>num = choose(5,6,7,8,9)
+global.roomDone = false
+for(i = 1; i&lt;num; i++){
+    instance_create(round(random_range(100,620)),round(random_range(100,380)),obj_enemy)
+}
 </string>
           </argument>
         </arguments>
@@ -51,67 +52,10 @@ global.roomDone = true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>darkness = darkness + 0.0004
-obj_dark.image_alpha = clamp(darkness,0,0.95)
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_player">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if global.roomDone {
-    image_speed = 0.15
+            <string>if instance_number(obj_enemy) &lt;= 0 {
+    global.roomDone = true
+    instance_destroy()
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="7">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>image_speed = 0;
-image_index = 0;
-instance_create(10,10,obj_killEnemies)
-rm_new = room_add();
-room_set_width(rm_new,720);
-room_set_height(rm_new,480);
-room_set_background(rm_new, 0, true, false, back_wood, x, y, true, true, 0, 0, 1);
-room_goto(rm_new);
-darkness = 0
-obj_player.x = 528
-obj_player.y = 380
-global.mission = obj_killEnemies
 </string>
           </argument>
         </arguments>
@@ -131,6 +75,6 @@ global.mission = obj_killEnemies
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
     <point>0,0</point>
-    <point>12,12</point>
+    <point>24,24</point>
   </PhysicsShapePoints>
 </object>
