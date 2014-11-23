@@ -102,6 +102,7 @@ obj_dark.image_alpha = clamp(darkness,0,0.95)
             <kind>1</kind>
             <string>image_speed = 0;
 image_index = 0;
+instance_create(10,10,obj_killEnemies)
 rm_new = room_add();
 room_set_width(rm_new,720);
 room_set_height(rm_new,480);
@@ -111,7 +112,6 @@ darkness = 0
 obj_player.x = 528
 obj_player.y = 380
 global.mission = obj_killEnemies
-event_perform_object(obj_player,ev_other,ev_user0)
 </string>
           </argument>
         </arguments>

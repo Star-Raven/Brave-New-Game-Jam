@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -28,7 +28,7 @@
             <string>num = choose(5,6,7,8,9)
 global.roomDone = false
 for(i = 1; i&lt;num; i++){
-    instance_create(random_range(100,620),random_range(100,380),obj_enemy)
+    instance_create(round(random_range(100,620)),round(random_range(100,380)),obj_enemy)
 }
 </string>
           </argument>
@@ -54,6 +54,7 @@ for(i = 1; i&lt;num; i++){
             <kind>1</kind>
             <string>if instance_number(obj_enemy) &lt;= 0 {
     global.roomDone = true
+    instance_destroy()
 }
 </string>
           </argument>
@@ -72,5 +73,8 @@ for(i = 1; i&lt;num; i++){
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>0,0</point>
+    <point>24,24</point>
+  </PhysicsShapePoints>
 </object>
