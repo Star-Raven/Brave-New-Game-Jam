@@ -33,7 +33,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>30</string>
+            <string>15</string>
           </argument>
         </arguments>
       </action>
@@ -53,8 +53,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>move_bounce_solid(false);
-numBounces = 0;
+            <string>numBounces = 0;
 </string>
           </argument>
         </arguments>
@@ -369,27 +368,6 @@ numBounces = 0;
     <event eventtype="4" ename="obj_tkblast">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>image_angle=point_direction(x,y,mouse_x,mouse_y)
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>115</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -404,7 +382,7 @@ numBounces = 0;
         <arguments>
           <argument>
             <kind>4</kind>
-            <string>1</string>
+            <string>0</string>
           </argument>
           <argument>
             <kind>4</kind>

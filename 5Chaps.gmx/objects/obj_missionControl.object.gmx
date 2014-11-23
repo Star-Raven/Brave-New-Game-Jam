@@ -2,8 +2,8 @@
 <object>
   <spriteName>spr_doorFront</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
-  <depth>0</depth>
+  <visible>0</visible>
+  <depth>-1000</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,11 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>num = choose(5,6,7,8,9)
-global.roomDone = false
-for(i = 1; i&lt;num; i++){
-    instance_create(round(random_range(100,620)),round(random_range(100,380)),obj_enemy)
-}
+            <string>global.roomDone = true
+global.newRoom = true
+global.hard = 0
+global.mission = "Start"
 </string>
           </argument>
         </arguments>
@@ -52,9 +51,19 @@ for(i = 1; i&lt;num; i++){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_number(obj_enemy) &lt;= 0 {
-    global.roomDone = true
-    instance_destroy()
+            <string>if global.newRoom {
+    if global.mission = "KillAll"{
+        global.newRoom = false
+        for (i = 1; i &lt; round(random_range(3,5)); i++){
+            instance_create(random_range(100,620),random_range(100,380),obj_enemy)
+        }
+        global.roomDone = false
+    }
+} else {
+    if instance_number(obj_enemy) &lt;= 0 {
+        global.roomDone = true
+        instance_destroy()
+    }
 }
 </string>
           </argument>

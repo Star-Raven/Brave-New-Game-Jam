@@ -30,7 +30,7 @@ image_speed = 0.15
 sprite_index = spr_revive;
 playerTele = false;
 canBlast = true
-dying = false;
+global.dying = false;
 living = true
 randomize();
 alarm[0] = 30
@@ -115,7 +115,7 @@ if keyboard_check(ord("D")) and place_free(x+5, y){
 }else if keyboard_check(ord("S")) and place_free(x, y+3){
     y += 3;
     sprite_index = spr_playerDown;
-}else if dying {
+}else if global.dying {
     sprite_index = spr_revive;
     image_speed = (-0.15)
 }else if not living{
@@ -144,7 +144,7 @@ depth = -y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dying = true
+            <string>global.dying = true
 </string>
           </argument>
         </arguments>
@@ -169,7 +169,7 @@ depth = -y;
           </argument>
           <argument>
             <kind>0</kind>
-            <string>17</string>
+            <string>16</string>
           </argument>
           <argument>
             <kind>0</kind>
@@ -195,7 +195,7 @@ depth = -y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dying = true
+            <string>global.dying = true
 </string>
           </argument>
         </arguments>
@@ -220,7 +220,7 @@ depth = -y;
           </argument>
           <argument>
             <kind>0</kind>
-            <string>17</string>
+            <string>16</string>
           </argument>
           <argument>
             <kind>0</kind>
@@ -412,8 +412,8 @@ depth = -y;
             <kind>1</kind>
             <string>if living {
     living = false
-}else if dying {
-    dying = false
+}else if global.dying {
+    global.dying = false
     game_restart()
 }
 </string>

@@ -153,55 +153,62 @@ if instance_exists(tk) {
     var newX = x-((x+12)-tk.x)
     var newY = y-((y+18)-tk.y)
     if place_meeting(newX, newY, obj_barrel){
-        event_perform_object(instance_nearest(newX,newY,obj_barrel),ev_collision,obj_bullet)
-    } else if place_free(newX, newY) and !place_meeting(x+5, y, obj_door) {
+        with(instance_nearest(x,y,obj_barrel)){
+            instance_destroy()
+        }
+        instance_destroy()
+    } else if place_free(newX, newY) and !place_meeting(newX, newY, obj_door) {
         x = newX
         y = newY
     }
 } else {
-    switch(dir){
-        case 1:
-            if place_free(x+5, y) and !place_meeting(x+5, y, obj_door) {
-                x += 5;
-                sprite_index = spr_enemyRight;
-                image_speed = 0.15
-            }
-            break;
-        case 2:
-            if place_free(x-5, y) and !place_meeting(x-5, y, obj_door) {
-                x -= 5;
-                sprite_index = spr_enemyLeft;
-                image_speed = 0.15
-            }
-            break;
-        case 3:
-            if place_free(x, y-3) and !place_meeting(x,y-3, obj_door) {
-                y -= 3;
-                sprite_index = spr_enemyUp;
-                image_speed = 0.15
-            }
-            break;
-        case 4:
-            if place_free(x, y+3) and !place_meeting(x,y+3, obj_door) {
-                y += 3;
-                sprite_index = spr_enemyDown;
-                image_speed = 0.15
-            }
-            break;
-        case 5:
-            image_speed = 0
-            sprite_index = spr_enemyDown;
-            break;
-    }
+    player = instance_nearest(x,y,obj_player)
+    pXDir = clamp(player.x-x,-1,1)
+    pXDir = clamp(player.y-y,-1,1)
 }
+//+ = down and right, - = up and left
+
+
 depth = -y;
 if canShoot {
-    alarm[1] = choose(0,1,2,3)*30
+    alarm[1] = choose(1,2,3)*30
     canShoot = false;
 }
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bullet">
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_explosion">
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
   </events>

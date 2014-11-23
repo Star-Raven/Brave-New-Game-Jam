@@ -69,7 +69,7 @@
       </objects>
       <objects name="MiscObjects">
         <object>objects\obj_bullet</object>
-        <object>objects\obj_killEnemies</object>
+        <object>objects\obj_missionControl</object>
       </objects>
       <objects name="WallObjects">
         <object>objects\obj_door</object>
