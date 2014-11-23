@@ -5,9 +5,9 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\Tk</sound>
+    <sound>sound\snd_tk</sound>
     <sound>sound\sound0</sound>
-    <sound>sound\Tp</sound>
+    <sound>sound\snd_tp</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="GameSprites">
