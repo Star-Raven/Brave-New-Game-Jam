@@ -28,6 +28,7 @@
             <string>image_speed = 0
 darkness = 0
 obj_dark.image_alpha = darkness
+global.roomDone = true
 </string>
           </argument>
         </arguments>
@@ -74,7 +75,9 @@ obj_dark.image_alpha = clamp(darkness,0,0.95)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.15
+            <string>if global.roomDone {
+    image_speed = 0.15
+}
 </string>
           </argument>
         </arguments>
@@ -107,9 +110,7 @@ room_goto(rm_new);
 darkness = 0
 obj_player.x = 528
 obj_player.y = 380
-for (q = 1; q &lt; choose(5,6,7,8,9,10); q++){
-instance_create(random_range(48,672),random_range(48,432),obj_enemy)
-}
+instance_create(0,0,obj_killEnemies)
 </string>
           </argument>
         </arguments>

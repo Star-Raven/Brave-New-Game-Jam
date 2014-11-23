@@ -69,6 +69,7 @@
       </objects>
       <objects name="MiscObjects">
         <object>objects\obj_bullet</object>
+        <object>objects\obj_killEnemies</object>
       </objects>
       <objects name="WallObjects">
         <object>objects\obj_door</object>
@@ -87,6 +88,7 @@
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
     <room>rooms\rm_test</room>
+    <room>rooms\rm_credits</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
