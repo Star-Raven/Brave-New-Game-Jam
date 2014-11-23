@@ -88,7 +88,7 @@ canShoot = true;
           <argument>
             <kind>1</kind>
             <string>instance_create(x,y,obj_gunprecog)
-alarm[2] = 90
+alarm[2] = 60
 </string>
           </argument>
         </arguments>
@@ -111,7 +111,20 @@ alarm[2] = 90
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir = choose(dir,dir,1,1,2,2,3,3,5,5,5);
+            <string>//right left up down
+if choose(1,2) = 1 {
+    if 720-x &gt;= 360 {
+        dir = choose(1,1,2,2,2,3,4,5,5);
+    } else {
+        dir = choose(1,1,1,2,2,3,4,5,5);
+    }
+} else {
+    if 480-y &gt;= 240 {
+        dir = choose(1,2,3,3,3,4,4,5,5);
+    } else {
+        dir = choose(1,2,3,3,4,4,4,5,5);
+    }
+}
 alarm[0] = 30
 </string>
           </argument>
@@ -171,7 +184,7 @@ alarm[0] = 30
 }
 depth = -y;
 if canShoot {
-    alarm[1] = (2+(choose(0,1,2,3,4,5)))*30
+    alarm[1] = choose(0,1,2,3)*30
     canShoot = false;
 }
 </string>
