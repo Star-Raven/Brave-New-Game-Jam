@@ -46,11 +46,8 @@
         <arguments>
           <argument>
             <kind>6</kind>
-<<<<<<< HEAD
             <sound>-100</sound>
-=======
             <sound>snd_tp</sound>
->>>>>>> origin/master
           </argument>
           <argument>
             <kind>3</kind>
