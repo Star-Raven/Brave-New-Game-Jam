@@ -86,7 +86,7 @@
     <objects name="MenuObjects">
       <object>objects\obj_start</object>
     </objects>
-    <object>objects\object18</object>
+    <object>objects\obj_speech</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
