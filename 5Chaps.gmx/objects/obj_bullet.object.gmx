@@ -33,7 +33,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>15+(hard*2)</string>
+            <string>15+(global.hard*2)</string>
           </argument>
         </arguments>
       </action>
