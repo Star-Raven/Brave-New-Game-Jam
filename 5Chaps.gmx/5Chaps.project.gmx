@@ -35,6 +35,7 @@
         <sprite>sprites\spr_wallRight</sprite>
       </sprites>
       <sprites name="ObjectSprites">
+        <sprite>sprites\spr_objAlert</sprite>
         <sprite>sprites\spr_spike</sprite>
         <sprite>sprites\spr_explosion</sprite>
         <sprite>sprites\spr_barrel</sprite>
@@ -63,6 +64,7 @@
         <object>objects\obj_player</object>
       </objects>
       <objects name="ObjectObjects">
+        <object>objects\obj_objAlert</object>
         <object>objects\obj_spike</object>
         <object>objects\obj_barrel</object>
         <object>objects\obj_explosion</object>
