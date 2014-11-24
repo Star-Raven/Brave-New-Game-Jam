@@ -159,7 +159,7 @@ if instance_exists(tk) {
 
 depth = -y;
 if canShoot {
-    alarm[1] = choose(1,2,3)*30
+    alarm[1] = choose(1,2,3)*30-clamp(global.hard,0,29)
     canShoot = false;
 }
 </string>

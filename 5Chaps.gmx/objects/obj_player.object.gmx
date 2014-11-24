@@ -115,8 +115,7 @@ if keyboard_check(ord("D")) and place_free(x+5, y){
 }else if keyboard_check(ord("S")) and place_free(x, y+3){
     y += 3;
     sprite_index = spr_playerDown;
-}
-if global.dying {
+}else if global.dying {
     sprite_index = spr_revive;
     image_speed = -0.15
 }else if not living{

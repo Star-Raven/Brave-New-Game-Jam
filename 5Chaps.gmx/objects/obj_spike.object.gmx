@@ -156,7 +156,7 @@ alarm[1] = 90
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 60
+            <string>alarm[0] = 60-clamp(2*global.hard,0,59)
 image_speed = 0
 image_index = 0
 damaging = false
