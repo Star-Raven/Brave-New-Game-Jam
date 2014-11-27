@@ -60,7 +60,7 @@ global.mission = "Start"
         for (i = 1; i &lt; round(random_range(3,5)); i++){
             instance_create(random_range(100,620),random_range(100,380),obj_barrel)
         }
-        for (i = 1; i &lt; round(random_range(3,5)); i++){
+        for (i = 1; i &lt; round(random_range(3,5+global.hard)); i++){
             instance_create(random_range(100,620),random_range(100,380),obj_spike)
         }
         

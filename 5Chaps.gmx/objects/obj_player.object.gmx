@@ -274,29 +274,22 @@ depth = -y;
       </action>
       <action>
         <libid>1</libid>
-        <id>201</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_create_object</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
-        <relative>-1</relative>
+        <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>10</kind>
-            <object>obj_tkblast</object>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>+12</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>+18</string>
+            <kind>1</kind>
+            <string>instance_create(x-29,y-30,obj_tkblast)
+</string>
           </argument>
         </arguments>
       </action>
@@ -316,7 +309,7 @@ depth = -y;
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>15</string>
+            <string>30</string>
           </argument>
           <argument>
             <kind>4</kind>
